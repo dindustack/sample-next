@@ -2,18 +2,14 @@ import { sum } from "../helpers/sum";
 
 describe("the sum function", () => {
   test("two plus two is four", () => {
-    const first = 2;
-    const second = 4;
-    const expectation = 6;
-    const result = sum(first, second);
-    expect(result).toBe(expectation);
+    expect(sum([2, 2])).toBe(4);
   });
-  
-  test("minus eight plus fourteen is six", () => {
-    const first = -9;
-    const second = 14;
-    const expectation = 5;
-    const result = sum(first, second);
-    expect(result).toBe(expectation);
+
+  test("minus nine plus fourteen is six", () => {
+    expect(sum([-9, 14])).toBe(5);
+  });
+
+  test("two plus two plus minus four is zero", () => {
+    expect(sum([2, 2, -4])).toBe(0);
   });
 });
